@@ -14,18 +14,19 @@ const addMovie = async(event) => {
     const dynamodb = new AWS.DynamoDB.DocumentClient();
 
     // Recoger los datos provenientes del body de la petición
-    const { title, director, year } = JSON.parse(event.body);
+    const { titulo, director, año } = JSON.parse(event.body);
 
-    const createAt = new Date();
+    const today = new Date();
+    var fecha = today.toLocaleString();
     const id = uuidv4();
 
     // Crear el objeto para guardar
     const newMovie = {
         id,
-        title,
+        titulo,
         director,
-        year,
-        createAt
+        año,
+        fecha
     }
 
     // put permite guardar un dato

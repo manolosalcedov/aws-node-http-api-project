@@ -10,7 +10,7 @@ provider:
       Action:
         - dynamodb:*
       Resource:
-        - arn:aws:dynamodb:us-east-1:450515178543:table/MoviesTable 
+        - arn:aws:dynamodb:us-east-1:450515178543:table/MoviesTable
 
 functions:
   api:

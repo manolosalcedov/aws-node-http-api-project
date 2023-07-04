@@ -9,15 +9,15 @@ const AWS = require('aws-sdk');
         const { id } = event.pathParameters;
 
         // Extraer valores recibidos a través del evento:
-        const { title, director } = JSON.parse(event.body);
+        const { titulo, director } = JSON.parse(event.body);
 
         const result = await dynamodb.update({
             TableName: 'MoviesTable',
 
             // Setear cada uno de los valores
-            UpdateExpression: 'set title = :title, director = :director',
+            UpdateExpression: 'set titulo = :titulo, director = :director',
             ExpressionAttributeValues: {                
-                ':title': title,
+                ':titulo': titulo,
                 ':director': director
             },
 
